@@ -1,5 +1,10 @@
 module.exports = {
   plugins: ['react'],
+  settings: {
+    react: {
+      version: '17.0.1',
+    },
+  },
   extends: ['eslint:recommended', 'plugin:react/recommended'],
   parserOptions: {
     ecmaVersion: 6,
