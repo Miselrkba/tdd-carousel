@@ -90,12 +90,18 @@ describe('Carousel', () => {
     expect(wrapper.state('slideIndex')).toBe(2);
   });
 
-  it('renders current slide as a CarouselSlide', () => {
+  it('renders the current slide as a CarouselSlide', () => {
     let slideProps;
     slideProps = wrapper.find(CarouselSlide).props();
-    expect(slideProps).toEqual(slides[0]);
+    expect(slideProps).toEqual({
+      ...CarouselSlide.defaultProps,
+      ...slides[0],
+    });
     wrapper.setState({ slideIndex: 1 });
     slideProps = wrapper.find(CarouselSlide).props();
-    expect(slideProps).toEqual(slides[1]);
+    expect(slideProps).toEqual({
+      ...CarouselSlide.defaultProps,
+      ...slides[1],
+    });
   });
 });
