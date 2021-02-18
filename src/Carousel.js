@@ -1,15 +1,14 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import CarouselButton from './CarouselButton';
 import CarouselSlide from './CarouselSlide';
 import PropTypes from 'prop-types';
 
-export default class Carousel extends PureComponent {
+export default class Carousel extends React.PureComponent {
   static propTypes = {
     defaultImgHeight: CarouselSlide.propTypes.imgHeight,
     slides: PropTypes.arrayOf(PropTypes.shape(CarouselSlide.propTypes))
       .isRequired,
   };
-
   static defaultProps = {
     defaultImgHeight: CarouselSlide.defaultProps.imgHeight,
   };
